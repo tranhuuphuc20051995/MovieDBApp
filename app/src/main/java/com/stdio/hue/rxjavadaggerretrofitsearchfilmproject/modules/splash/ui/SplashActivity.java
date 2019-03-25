@@ -1,8 +1,8 @@
 package com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.splash.ui;
 
 import android.annotation.SuppressLint;
-import android.databinding.ViewDataBinding;
-import android.support.annotation.NonNull;
+import androidx.databinding.ViewDataBinding;
+import androidx.annotation.NonNull;
 
 import com.stdio.hue.base.core.mvp.BasePresenter;
 import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.R;

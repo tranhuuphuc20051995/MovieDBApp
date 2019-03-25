@@ -1,6 +1,6 @@
 package com.stdio.hue.data.models.bases;
 
-import android.databinding.BaseObservable;
+import androidx.databinding.BaseObservable;
 
 import com.google.gson.annotations.SerializedName;
 

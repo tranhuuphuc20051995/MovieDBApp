@@ -1,10 +1,10 @@
 package com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.base;
 
 import android.content.Context;
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
+import androidx.annotation.LayoutRes;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

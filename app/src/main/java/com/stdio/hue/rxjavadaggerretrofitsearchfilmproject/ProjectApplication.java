@@ -1,6 +1,6 @@
 package com.stdio.hue.rxjavadaggerretrofitsearchfilmproject;
 
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDexApplication;
 
 import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.di.components.AppComponent;
 import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.di.components.DaggerAppComponent;

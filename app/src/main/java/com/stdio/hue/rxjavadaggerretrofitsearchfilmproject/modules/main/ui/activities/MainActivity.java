@@ -2,7 +2,7 @@ package com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.ui.acti
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.stdio.hue.base.core.mvp.BasePresenter;
 import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.R;
