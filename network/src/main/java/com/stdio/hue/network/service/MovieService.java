@@ -12,32 +12,32 @@ import retrofit2.http.Query;
  */
 public interface MovieService {
     @GET("trending/movie/day")
-    Observable<JsonObject> getTrendingListForTheDay(@Query("api_key") String apiKey, @Query("page") String page);
+    Observable<JsonObject> getTrendingListForTheDay(@Query("api_key") String apiKey, @Query("page") int page);
 
     @GET("movie/now_playing")
-    Observable<JsonObject> getNowPlaying(@Query("api_key") String apiKey, @Query("page") String page);
+    Observable<JsonObject> getNowPlaying(@Query("api_key") String apiKey, @Query("page") int page);
 
     @GET("movie/popular")
-    Observable<JsonObject> getPopulars(@Query("api_key") String apiKey, @Query("page") String page);
+    Observable<JsonObject> getPopulars(@Query("api_key") String apiKey, @Query("page") int page);
 
     @GET("movie/top_rated")
-    Observable<JsonObject> getTopRated(@Query("api_key") String apiKey, @Query("page") String page);
+    Observable<JsonObject> getTopRated(@Query("api_key") String apiKey, @Query("page") int page);
 
     @GET("movie/upcoming")
-    Observable<JsonObject> getUpcoming(@Query("api_key") String apiKey, @Query("page") String page);
+    Observable<JsonObject> getUpcoming(@Query("api_key") String apiKey, @Query("page") int page);
 
     @GET("movie/{movieId}")
     Observable<JsonObject> getMovieDetail(@Query("api_key") String apiKey, @Path("movieId") String movieId);
 
     @GET("movie/{movieId}/recommendations")
-    Observable<JsonObject> getRecommendations(@Query("api_key") String apiKey, @Path("movieId") String movieId, @Query("page") String page);
+    Observable<JsonObject> getRecommendations(@Query("api_key") String apiKey, @Path("movieId") String movieId, @Query("page") int page);
 
     @GET("movie/{movieId}/similar")
-    Observable<JsonObject> getSimilarMovies(@Query("api_key") String apiKey, @Path("movieId") String movieId, @Query("page") String page);
+    Observable<JsonObject> getSimilarMovies(@Query("api_key") String apiKey, @Path("movieId") String movieId, @Query("page") int page);
 
     @GET("movie/{movieId}/videos")
     Observable<JsonObject> getVideoTrailer(@Query("api_key") String apiKey, @Path("movieId") String movieId);
 
     @GET("search/movie")
-    Observable<JsonObject> searchMovies(@Query("api_key") String apiKey, @Query("query") String query, @Query("page") String page);
+    Observable<JsonObject> searchMovies(@Query("api_key") String apiKey, @Query("query") String query, @Query("page") int page);
 }

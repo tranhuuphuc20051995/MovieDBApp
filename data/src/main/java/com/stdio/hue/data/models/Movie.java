@@ -1,12 +1,12 @@
 package com.stdio.hue.data.models;
 
-import androidx.databinding.BaseObservable;
-
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.databinding.BaseObservable;
 
 /**
  * Created by TranHuuPhuc on 3/25/19.
@@ -82,7 +82,7 @@ public class Movie extends BaseObservable implements Serializable {
     }
 
     public String getBackdropPath() {
-        return backdropPath;
+        return "http://image.tmdb.org/t/p/original/" + backdropPath;
     }
 
     public void setBackdropPath(String backdropPath) {
@@ -170,7 +170,7 @@ public class Movie extends BaseObservable implements Serializable {
     }
 
     public String getPosterPath() {
-        return posterPath;
+        return "http://image.tmdb.org/t/p/original/" + posterPath;
     }
 
     public void setPosterPath(String posterPath) {

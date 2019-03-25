@@ -27,6 +27,12 @@ public class AppModule {
     }
 
     @Provides
+    @Named("api_key")
+    public String provideAPIKey() {
+        return "28aa4fa810b9a3e6a836ec3eaf3d916e";
+    }
+
+    @Provides
     @Singleton
     @Named("default")
     public Gson providesGson() {

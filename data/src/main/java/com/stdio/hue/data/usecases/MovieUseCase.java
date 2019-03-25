@@ -13,23 +13,23 @@ import io.reactivex.Observable;
  */
 public interface MovieUseCase {
 
-    Observable<BaseResponse<List<Movie>>> getTrendingListForTheDay(String apiKey, String page);
+    Observable<BaseResponse<List<Movie>>> getTrendingListForTheDay(String apiKey, int page);
 
-    Observable<BaseResponse<List<Movie>>> getNowPlaying(String apiKey, String page);
+    Observable<BaseResponse<List<Movie>>> getNowPlaying(String apiKey, int page);
 
-    Observable<BaseResponse<List<Movie>>> getPopulars(String apiKey, String page);
+    Observable<BaseResponse<List<Movie>>> getPopulars(String apiKey, int page);
 
-    Observable<BaseResponse<List<Movie>>> getTopRated(String apiKey, String page);
+    Observable<BaseResponse<List<Movie>>> getTopRated(String apiKey, int page);
 
-    Observable<BaseResponse<List<Movie>>> getUpcoming(String apiKey, String page);
+    Observable<BaseResponse<List<Movie>>> getUpcoming(String apiKey, int page);
 
     Observable<BaseResponse<Movie>> getMovieDetail(String apiKey, String movieId);
 
-    Observable<BaseResponse<List<Movie>>> getRecommendations(String apiKey, String movieId, String page);
+    Observable<BaseResponse<List<Movie>>> getRecommendations(String apiKey, String movieId, int page);
 
-    Observable<BaseResponse<List<Movie>>> getSimilarMovies(String apiKey, String movieId, String page);
+    Observable<BaseResponse<List<Movie>>> getSimilarMovies(String apiKey, String movieId, int page);
 
     Observable<BaseResponse<List<Video>>> getVideoTrailer(String apiKey, String movieId);
 
-    Observable<BaseResponse<List<Movie>>> searchMovies(String apiKey, String query, String page);
+    Observable<BaseResponse<List<Movie>>> searchMovies(String apiKey, String query, int page);
 }

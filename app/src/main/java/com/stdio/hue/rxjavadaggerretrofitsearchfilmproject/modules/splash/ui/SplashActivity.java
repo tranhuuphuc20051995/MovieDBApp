@@ -1,16 +1,16 @@
 package com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.splash.ui;
 
 import android.annotation.SuppressLint;
-import androidx.databinding.ViewDataBinding;
-import androidx.annotation.NonNull;
 
 import com.stdio.hue.base.core.mvp.BasePresenter;
 import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.R;
 import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.base.BaseMovieActivity;
-import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.ui.activities.MainActivity;
+import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.walkthrought.ui.activities.WalkThroughtActivity;
 
 import java.util.concurrent.TimeUnit;
 
+import androidx.annotation.NonNull;
+import androidx.databinding.ViewDataBinding;
 import io.reactivex.Observable;
 
 /**
@@ -35,7 +35,7 @@ public class SplashActivity extends BaseMovieActivity<BasePresenter, ViewDataBin
     @Override
     protected void resumeScreen() {
         disposableManager.add(Observable.just(true).delay(3000, TimeUnit.MILLISECONDS).subscribe(v -> {
-            MainActivity.start(this);
+            WalkThroughtActivity.start(this);
             finish();
         }));
 

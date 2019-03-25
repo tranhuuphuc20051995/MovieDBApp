@@ -2,29 +2,30 @@ package com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.ui.frag
 
 import android.content.Context;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.view.View;
 
+import com.stdio.hue.base.core.mvp.BasePresenter;
 import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.R;
-import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.databinding.FragmentMainBinding;
+import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.databinding.FragmentTvShowBinding;
 import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.base.BaseMovieFragment;
-import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.presenters.MainPresenter;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 /**
- * Created by TranHuuPhuc on 3/24/19.
+ * Created by TranHuuPhuc on 3/25/19.
  */
-public class MainFragment extends BaseMovieFragment<MainPresenter, FragmentMainBinding> {
-    public static MainFragment newInstance() {
+public class TVShowFragment extends BaseMovieFragment<BasePresenter, FragmentTvShowBinding> {
+    public static TVShowFragment newInstance() {
         Bundle args = new Bundle();
-        MainFragment fragment = new MainFragment();
+        TVShowFragment fragment = new TVShowFragment();
         fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_main;
+        return R.layout.fragment_tv_show;
     }
 
     @Override
@@ -54,7 +55,7 @@ public class MainFragment extends BaseMovieFragment<MainPresenter, FragmentMainB
 
     @NonNull
     @Override
-    protected MainPresenter createPresenter() {
-        return getAppComponent().getMainComponent().getMainPresenter();
+    protected BasePresenter createPresenter() {
+        return new BasePresenter();
     }
 }

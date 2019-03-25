@@ -25,7 +25,7 @@ public class MovieUseCaseImpl extends BaseUseCase implements MovieUseCase {
     }
 
     @Override
-    public Observable<BaseResponse<List<Movie>>> getTrendingListForTheDay(String apiKey, String page) {
+    public Observable<BaseResponse<List<Movie>>> getTrendingListForTheDay(String apiKey, int page) {
         return movieService.getTrendingListForTheDay(apiKey, page)
                 .subscribeOn(Schedulers.io())
                 .map(s -> getGson().fromJson(s, new TypeToken<BaseResponse<List<Movie>>>() {
@@ -33,7 +33,7 @@ public class MovieUseCaseImpl extends BaseUseCase implements MovieUseCase {
     }
 
     @Override
-    public Observable<BaseResponse<List<Movie>>> getNowPlaying(String apiKey, String page) {
+    public Observable<BaseResponse<List<Movie>>> getNowPlaying(String apiKey, int page) {
         return movieService.getNowPlaying(apiKey, page)
                 .subscribeOn(Schedulers.io())
                 .map(s -> getGson().fromJson(s, new TypeToken<BaseResponse<List<Movie>>>() {
@@ -41,7 +41,7 @@ public class MovieUseCaseImpl extends BaseUseCase implements MovieUseCase {
     }
 
     @Override
-    public Observable<BaseResponse<List<Movie>>> getPopulars(String apiKey, String page) {
+    public Observable<BaseResponse<List<Movie>>> getPopulars(String apiKey, int page) {
         return movieService.getPopulars(apiKey, page)
                 .subscribeOn(Schedulers.io())
                 .map(s -> getGson().fromJson(s, new TypeToken<BaseResponse<List<Movie>>>() {
@@ -49,7 +49,7 @@ public class MovieUseCaseImpl extends BaseUseCase implements MovieUseCase {
     }
 
     @Override
-    public Observable<BaseResponse<List<Movie>>> getTopRated(String apiKey, String page) {
+    public Observable<BaseResponse<List<Movie>>> getTopRated(String apiKey, int page) {
         return movieService.getTopRated(apiKey, page)
                 .subscribeOn(Schedulers.io())
                 .map(s -> getGson().fromJson(s, new TypeToken<BaseResponse<List<Movie>>>() {
@@ -57,7 +57,7 @@ public class MovieUseCaseImpl extends BaseUseCase implements MovieUseCase {
     }
 
     @Override
-    public Observable<BaseResponse<List<Movie>>> getUpcoming(String apiKey, String page) {
+    public Observable<BaseResponse<List<Movie>>> getUpcoming(String apiKey, int page) {
         return movieService.getUpcoming(apiKey, page)
                 .subscribeOn(Schedulers.io())
                 .map(s -> getGson().fromJson(s, new TypeToken<BaseResponse<List<Movie>>>() {
@@ -73,7 +73,7 @@ public class MovieUseCaseImpl extends BaseUseCase implements MovieUseCase {
     }
 
     @Override
-    public Observable<BaseResponse<List<Movie>>> getRecommendations(String apiKey, String movieId, String page) {
+    public Observable<BaseResponse<List<Movie>>> getRecommendations(String apiKey, String movieId, int page) {
         return movieService.getRecommendations(apiKey, movieId, page)
                 .subscribeOn(Schedulers.io())
                 .map(s -> getGson().fromJson(s, new TypeToken<BaseResponse<List<Movie>>>() {
@@ -81,7 +81,7 @@ public class MovieUseCaseImpl extends BaseUseCase implements MovieUseCase {
     }
 
     @Override
-    public Observable<BaseResponse<List<Movie>>> getSimilarMovies(String apiKey, String movieId, String page) {
+    public Observable<BaseResponse<List<Movie>>> getSimilarMovies(String apiKey, String movieId, int page) {
         return movieService.getSimilarMovies(apiKey, movieId, page)
                 .subscribeOn(Schedulers.io())
                 .map(s -> getGson().fromJson(s, new TypeToken<BaseResponse<List<Movie>>>() {
@@ -97,7 +97,7 @@ public class MovieUseCaseImpl extends BaseUseCase implements MovieUseCase {
     }
 
     @Override
-    public Observable<BaseResponse<List<Movie>>> searchMovies(String apiKey, String query, String page) {
+    public Observable<BaseResponse<List<Movie>>> searchMovies(String apiKey, String query, int page) {
         return movieService.searchMovies(apiKey, query, page)
                 .subscribeOn(Schedulers.io())
                 .map(s -> getGson().fromJson(s, new TypeToken<BaseResponse<List<Movie>>>() {

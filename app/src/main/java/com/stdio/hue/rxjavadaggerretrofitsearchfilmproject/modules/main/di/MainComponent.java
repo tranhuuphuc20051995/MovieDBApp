@@ -1,7 +1,7 @@
 package com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.di;
 
-import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.presenters.MainPresenter;
-import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.ui.actions.MainAction;
+import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.presenters.MoviePresenter;
+import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.ui.actions.MovieAction;
 
 import dagger.Subcomponent;
 import io.reactivex.subjects.PublishSubject;
@@ -11,7 +11,7 @@ import io.reactivex.subjects.PublishSubject;
  */
 @Subcomponent(modules = MainModule.class)
 public interface MainComponent {
-    PublishSubject<MainAction> getMainState();
+    PublishSubject<MovieAction> getMovieState();
 
-    MainPresenter getMainPresenter();
+    MoviePresenter getMoviePresenter();
 }

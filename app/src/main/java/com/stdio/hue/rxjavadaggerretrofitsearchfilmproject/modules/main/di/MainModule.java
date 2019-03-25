@@ -1,8 +1,11 @@
 package com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.di;
 
-import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.presenters.MainPresenter;
-import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.presenters.MainPresenterImpl;
-import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.ui.actions.MainAction;
+import com.stdio.hue.data.usecases.MovieUseCase;
+import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.presenters.MoviePresenter;
+import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.presenters.MoviePresenterImpl;
+import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.ui.actions.MovieAction;
+
+import javax.inject.Named;
 
 import dagger.Module;
 import dagger.Provides;
@@ -14,13 +17,13 @@ import io.reactivex.subjects.PublishSubject;
 @Module
 public class MainModule {
     @Provides
-    PublishSubject<MainAction> providesMainActionPublishSubject() {
-        return MainAction.publisher;
+    PublishSubject<MovieAction> providesMovieActionPublishSubject() {
+        return MovieAction.publisher;
     }
 
     @Provides
-    MainPresenter providesMainPresenter(PublishSubject<MainAction> mainActionPublishSubject) {
-        return new MainPresenterImpl(mainActionPublishSubject);
+    MoviePresenter providesMoviePresenter(PublishSubject<MovieAction> movieActionPublishSubject, @Named("api_key") String apiKey, MovieUseCase movieUseCase) {
+        return new MoviePresenterImpl(movieActionPublishSubject, apiKey, movieUseCase);
     }
 
 }
