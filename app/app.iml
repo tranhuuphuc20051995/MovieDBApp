@@ -210,5 +210,11 @@
     <orderEntry type="module" module-name="base" />
     <orderEntry type="module" module-name="network" />
     <orderEntry type="module" module-name="data" />
+    <orderEntry type="module" module-name="base" />
+    <orderEntry type="module" module-name="network" />
+    <orderEntry type="module" module-name="data" />
+    <orderEntry type="module" module-name="base" />
+    <orderEntry type="module" module-name="network" />
+    <orderEntry type="module" module-name="data" />
   </component>
 </module>
