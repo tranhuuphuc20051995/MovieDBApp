@@ -11,7 +11,7 @@ import androidx.databinding.BaseObservable;
 /**
  * Created by TranHuuPhuc on 3/25/19.
  */
-public class Movie extends BaseObservable implements Serializable {
+public class Movie extends BaseObservable implements Serializable, Comparable {
     @SerializedName("genre_ids")
     private List<Integer> genreIds;
     @SerializedName("adult")
@@ -279,5 +279,14 @@ public class Movie extends BaseObservable implements Serializable {
 
     public void setGenreIds(List<Integer> genreIds) {
         this.genreIds = genreIds;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Movie compare = (Movie) o;
+        if (compare.title.equals(this.title) && compare.runtime.equals(this.runtime) && compare.id.equals(this.id)) {
+            return 0;
+        }
+        return 1;
     }
 }

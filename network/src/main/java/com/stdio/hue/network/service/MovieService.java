@@ -27,16 +27,16 @@ public interface MovieService {
     Observable<JsonObject> getUpcoming(@Query("api_key") String apiKey, @Query("page") int page);
 
     @GET("movie/{movieId}")
-    Observable<JsonObject> getMovieDetail(@Query("api_key") String apiKey, @Path("movieId") String movieId);
+    Observable<JsonObject> getMovieDetail(@Path("movieId") int movieId, @Query("api_key") String apiKey);
 
     @GET("movie/{movieId}/recommendations")
-    Observable<JsonObject> getRecommendations(@Query("api_key") String apiKey, @Path("movieId") String movieId, @Query("page") int page);
+    Observable<JsonObject> getRecommendations(@Path("movieId") int movieId, @Query("api_key") String apiKey, @Query("page") int page);
 
     @GET("movie/{movieId}/similar")
-    Observable<JsonObject> getSimilarMovies(@Query("api_key") String apiKey, @Path("movieId") String movieId, @Query("page") int page);
+    Observable<JsonObject> getSimilarMovies(@Path("movieId") int movieId, @Query("api_key") String apiKey, @Query("page") int page);
 
     @GET("movie/{movieId}/videos")
-    Observable<JsonObject> getVideoTrailer(@Query("api_key") String apiKey, @Path("movieId") String movieId);
+    Observable<JsonObject> getVideoTrailer(@Path("movieId") int movieId, @Query("api_key") String apiKey);
 
     @GET("search/movie")
     Observable<JsonObject> searchMovies(@Query("api_key") String apiKey, @Query("query") String query, @Query("page") int page);

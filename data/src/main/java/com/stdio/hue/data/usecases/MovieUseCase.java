@@ -23,13 +23,13 @@ public interface MovieUseCase {
 
     Observable<BaseResponse<List<Movie>>> getUpcoming(String apiKey, int page);
 
-    Observable<BaseResponse<Movie>> getMovieDetail(String apiKey, String movieId);
+    Observable<BaseResponse<Movie>> getMovieDetail(String apiKey, int movieId);
 
-    Observable<BaseResponse<List<Movie>>> getRecommendations(String apiKey, String movieId, int page);
+    Observable<BaseResponse<List<Movie>>> getRecommendations(String apiKey, int movieId, int page);
 
-    Observable<BaseResponse<List<Movie>>> getSimilarMovies(String apiKey, String movieId, int page);
+    Observable<BaseResponse<List<Movie>>> getSimilarMovies(String apiKey, int movieId, int page);
 
-    Observable<BaseResponse<List<Video>>> getVideoTrailer(String apiKey, String movieId);
+    Observable<BaseResponse<List<Video>>> getVideoTrailer(String apiKey, int movieId);
 
     Observable<BaseResponse<List<Movie>>> searchMovies(String apiKey, String query, int page);
 }

@@ -65,32 +65,32 @@ public class MovieUseCaseImpl extends BaseUseCase implements MovieUseCase {
     }
 
     @Override
-    public Observable<BaseResponse<Movie>> getMovieDetail(String apiKey, String movieId) {
-        return movieService.getMovieDetail(apiKey, movieId)
+    public Observable<BaseResponse<Movie>> getMovieDetail(String apiKey, int movieId) {
+        return movieService.getMovieDetail(movieId, apiKey)
                 .subscribeOn(Schedulers.io())
                 .map(s -> getGson().fromJson(s, new TypeToken<BaseResponse<Movie>>() {
                 }.getType()));
     }
 
     @Override
-    public Observable<BaseResponse<List<Movie>>> getRecommendations(String apiKey, String movieId, int page) {
-        return movieService.getRecommendations(apiKey, movieId, page)
+    public Observable<BaseResponse<List<Movie>>> getRecommendations(String apiKey, int movieId, int page) {
+        return movieService.getRecommendations(movieId, apiKey, page)
                 .subscribeOn(Schedulers.io())
                 .map(s -> getGson().fromJson(s, new TypeToken<BaseResponse<List<Movie>>>() {
                 }.getType()));
     }
 
     @Override
-    public Observable<BaseResponse<List<Movie>>> getSimilarMovies(String apiKey, String movieId, int page) {
-        return movieService.getSimilarMovies(apiKey, movieId, page)
+    public Observable<BaseResponse<List<Movie>>> getSimilarMovies(String apiKey, int movieId, int page) {
+        return movieService.getSimilarMovies(movieId, apiKey, page)
                 .subscribeOn(Schedulers.io())
                 .map(s -> getGson().fromJson(s, new TypeToken<BaseResponse<List<Movie>>>() {
                 }.getType()));
     }
 
     @Override
-    public Observable<BaseResponse<List<Video>>> getVideoTrailer(String apiKey, String movieId) {
-        return movieService.getVideoTrailer(apiKey, movieId)
+    public Observable<BaseResponse<List<Video>>> getVideoTrailer(String apiKey, int movieId) {
+        return movieService.getVideoTrailer(movieId, apiKey)
                 .subscribeOn(Schedulers.io())
                 .map(s -> getGson().fromJson(s, new TypeToken<BaseResponse<List<Video>>>() {
                 }.getType()));

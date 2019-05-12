@@ -14,6 +14,24 @@ import io.reactivex.Observable;
 public interface MoviePresenter extends Presenter {
     void getMainMovieData();
 
+    void getMovieDetail(int movieId);
+
+    void getUpcomingMoreMovie(int page);
+
+    void getTopRateMoreMovie(int page);
+
+    void getPopularMoreMovie(int page);
+
+    void getNowPlayingMoreMovie(int page);
+
+    void getRecommendations(int movieId, int page);
+
+    void getSimilarMovies(int movieId, int page);
+
+    void getVideoTrailer(int movieId);
+
+    void searchMovies( String query, int page);
+
     Observable<BaseResponse<List<Movie>>> getUpcoming(String apiKey, int page);
 
     Observable<BaseResponse<List<Movie>>> getTopRated(String apiKey, int page);

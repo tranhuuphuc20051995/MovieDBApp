@@ -30,7 +30,7 @@ dependencies {
     implementation supportDependencies.appCompat
     implementation supportDependencies.design
     implementation supportDependencies.dagger2
-    compileOnly supportDependencies.jsr250
+    implementation supportDependencies.jsr250
     annotationProcessor supportDependencies.dagger2Compiler
     implementation supportDependencies.rxJava
     implementation supportDependencies.rxAndroid

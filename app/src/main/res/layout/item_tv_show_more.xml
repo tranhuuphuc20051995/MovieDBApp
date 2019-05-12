@@ -3,10 +3,9 @@
 
     <com.github.florent37.shapeofview.shapes.RoundRectView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/fl_more"
-        android:layout_width="140dp"
-        android:layout_height="238dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="8dp"
         app:shape_roundRect_bottomLeftRadius="10dp"
         app:shape_roundRect_bottomRightRadius="10dp"
         app:shape_roundRect_topLeftRadius="10dp"

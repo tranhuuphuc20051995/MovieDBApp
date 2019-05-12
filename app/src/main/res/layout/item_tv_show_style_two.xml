@@ -13,8 +13,8 @@
     </data>
 
     <com.github.florent37.shapeofview.shapes.RoundRectView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/fl_movie"
-        android:layout_width="140dp"
+        android:id="@+id/rrv_tv_show"
+        android:layout_width="160dp"
         android:layout_height="238dp"
         android:layout_marginStart="16dp"
         app:shape_roundRect_bottomLeftRadius="10dp"

@@ -13,18 +13,29 @@
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ll_movie"
         android:layout_width="140dp"
         android:layout_height="238dp"
         android:layout_marginStart="16dp"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/iv_image"
+        <com.github.florent37.shapeofview.shapes.RoundRectView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:scaleType="fitXY"
-            app:loadUrl="@{imageUrl}" />
+            app:shape_roundRect_bottomLeftRadius="10dp"
+            app:shape_roundRect_bottomRightRadius="10dp"
+            app:shape_roundRect_topLeftRadius="10dp"
+            app:shape_roundRect_topRightRadius="10dp">
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                app:loadUrl="@{imageUrl}" />
+
+        </com.github.florent37.shapeofview.shapes.RoundRectView>
 
         <TextView
             android:id="@+id/tv_name"

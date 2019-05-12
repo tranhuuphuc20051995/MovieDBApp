@@ -13,10 +13,10 @@
     </data>
 
     <com.github.florent37.shapeofview.shapes.RoundRectView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/fl_movie"
-        android:layout_width="140dp"
-        android:layout_height="238dp"
-        android:layout_marginStart="16dp"
+        android:id="@+id/rrv_tv_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         app:shape_roundRect_bottomLeftRadius="10dp"
         app:shape_roundRect_bottomRightRadius="10dp"
         app:shape_roundRect_topLeftRadius="10dp"
@@ -25,26 +25,23 @@
         <ImageView
             android:id="@+id/iv_image"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
             app:loadUrl="@{imageUrl}" />
 
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="start|bottom"
             android:background="@drawable/bg_gradient_black_angle_90"
             android:ellipsize="end"
             android:gravity="bottom|center"
             android:maxLines="1"
-            android:minHeight="56dp"
             android:padding="8dp"
             android:text="@{name}"
             android:textAllCaps="true"
             android:textColor="@android:color/white"
             android:textSize="14sp"
             android:textStyle="bold" />
-
     </com.github.florent37.shapeofview.shapes.RoundRectView>
 </layout>

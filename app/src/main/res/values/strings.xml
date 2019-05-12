@@ -4,4 +4,6 @@
     <string name="welcom_to_movie_application">Welcom to movie application</string>
     <string name="more">More</string>
     <string name="coming_soon">Coming soon</string>
+    <string name="title_dynamic_feature">Module Title</string>
+    <string name="title_dynamic_feature2">Module Title</string>
 </resources>

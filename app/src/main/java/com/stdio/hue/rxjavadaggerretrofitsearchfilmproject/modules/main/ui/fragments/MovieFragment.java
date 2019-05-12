@@ -4,23 +4,27 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.stdio.hue.data.models.Movie;
 import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.R;
 import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.databinding.FragmentMovieBinding;
 import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.base.BaseMovieFragment;
 import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.presenters.MoviePresenter;
 import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.ui.actions.MovieAction;
-import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.ui.adapters.MainMovieAdapter;
+import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.main.ui.adapters.movies.MainMovieAdapter;
+import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.movies.ui.activities.MoreMovieActivity;
+import com.stdio.hue.rxjavadaggerretrofitsearchfilmproject.modules.movies.ui.activities.MovieDetailActivity;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import io.reactivex.subjects.PublishSubject;
 
 /**
  * Created by TranHuuPhuc on 3/24/19.
  */
-public class MovieFragment extends BaseMovieFragment<MoviePresenter, FragmentMovieBinding> {
+public class MovieFragment extends BaseMovieFragment<MoviePresenter, FragmentMovieBinding> implements MainMovieAdapter.MainMovieAdapterListener {
     public static MovieFragment newInstance() {
         Bundle args = new Bundle();
         MovieFragment fragment = new MovieFragment();
@@ -40,7 +44,13 @@ public class MovieFragment extends BaseMovieFragment<MoviePresenter, FragmentMov
         getPresenter().getMainMovieData();
         disposableManager.add(
                 movieActionPublishSubject.map(MovieAction::isLoading)
-                        .subscribe(this::loading)
+                        .subscribe(isLoading -> {
+                            if (isLoading) {
+                                viewDataBinding.pbLoading.setVisibility(View.VISIBLE);
+                            } else {
+                                viewDataBinding.pbLoading.setVisibility(View.GONE);
+                            }
+                        })
         );
 
         disposableManager.add(
@@ -52,7 +62,7 @@ public class MovieFragment extends BaseMovieFragment<MoviePresenter, FragmentMov
         disposableManager.add(
                 movieActionPublishSubject.filter(c -> c.getListMovies() != null)
                         .map(MovieAction::getListMovies)
-                        .subscribe(listMovies -> viewDataBinding.rvMovies.setAdapter(new MainMovieAdapter(listMovies.get(0), listMovies.get(1), listMovies.get(2), listMovies.get(3), listMovies.get(4))))
+                        .subscribe(listMovies -> viewDataBinding.rvMovies.setAdapter(new MainMovieAdapter(listMovies.get(0), listMovies.get(1), listMovies.get(2), listMovies.get(3), listMovies.get(4), this)))
         );
     }
 
@@ -80,5 +90,15 @@ public class MovieFragment extends BaseMovieFragment<MoviePresenter, FragmentMov
     @Override
     protected MoviePresenter createPresenter() {
         return getAppComponent().getMainComponent().getMoviePresenter();
+    }
+
+    @Override
+    public void onItemMovieClick(Movie movie) {
+        MovieDetailActivity.start(getContext(), movie.getId());
+    }
+
+    @Override
+    public void onItemMoreClick(int type) {
+        MoreMovieActivity.start(getContext(), type);
     }
 }

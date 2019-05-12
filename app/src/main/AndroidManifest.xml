@@ -12,7 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <activity android:name=".modules.main.ui.activities.MainActivity" />
         <activity android:name=".modules.splash.ui.SplashActivity">
             <intent-filter>
@@ -22,6 +23,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".modules.walkthrought.ui.activities.WalkThroughtActivity" />
+        <activity android:name=".modules.movies.ui.activities.MoreMovieActivity" />
+        <activity android:name=".modules.movies.ui.activities.PlayMovieActivity" />
+        <activity android:name=".modules.movies.ui.activities.MovieDetailActivity" />
     </application>
 
 </manifest>
